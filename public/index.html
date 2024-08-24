@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Crud Opration</title>
+</head>
+
+<body>
+    <div class="d-grid gap-2 col-6 mx-auto mt-2">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+            onclick="buttonadd()">
+            Add Data
+        </button>
+    </div>
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="false">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Input form</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3 row">
+                        <div class="col-12">
+                            <label for="name" class="form-label">Full name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter full name">
+                        </div>
+
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-6">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                        </div>
+                        <div class="col-6">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-6">
+                            <label for="age" class="form-label">Age</label>
+                            <input type="number" class="form-control" id="age" placeholder="Enter Age">
+                        </div>
+                        <div class="col-6">
+                            <label for="dob" class="form-label">Date of Birth</label>
+                            <input type="Date" class="form-control" id="dob" placeholder="Date of birth">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-6">
+                            <label for="month" class="form-label">Month</label>
+                            <input type="month" class="form-control" id="month" placeholder="Enter Age">
+                        </div>
+                        <div class="col-6">
+                            <label for="time" class="form-label">Time</label>
+                            <input type="time" class="form-control" id="time" placeholder="Date of birth">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-6">
+                            <label for="datetime" class="form-label">Date&time</label>
+                            <input type="datetime-local" class="form-control" id="datetime" placeholder="Enter Age">
+                        </div>
+                        <div class="col-6">
+                            <label for="week" class="form-label">Week</label>
+                            <input type="week" class="form-control" id="week" placeholder="Enter Age">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-6">
+                            <label for="exampleFormControlInput1" class="form-label">Gender</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="radio" id="male" value="male">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    male
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="radio" id="female" value="female"
+                                    checked>
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    female
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="color" class="form-label">Color</label>
+                            <input type="color" class="form-control" id="color" placeholder="Date of birth">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-12">
+                            <label for="range" class="form-label">Range</label>
+                            <input type="range" class="form-range" id="range">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-12">
+                            <input type="file" class="form-control" id="file" name="filedata">
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="checkbox">
+                                <label class="form-check-label" for="checkbox">
+                                    check boc i agree all term and condition
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="text" name="id" id="_id" hidden>
+                    <div class="mb-3 row">
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <input type="submit" class="btn btn-primary" data-bs-dismiss="modal" value="Submit"
+                                id="post" id="post" onclick="postinputdata()">
+                        </div>
+
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <input type="submit" class="btn btn-warning" data-bs-dismiss="modal" value="Edite"
+                                id="edite" onclick="editeinputdata()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="container-fluid table-responsive py-5">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Dob</th>
+                    <th scope="col">Month</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Datetime</th>
+                    <th scope="col">Checkbox</th>
+                    <th scope="col">Radio</th>
+                    <th scope="col">Range</th>
+                    <th scope="col">Weak</th>
+                    <th scope="col">Files</th>
+                </tr>
+            </thead>
+            <tbody id="td">
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script>
+        fetchdata()
+
+        function buttonadd() {
+            document.getElementById("post").style.display = 'block'
+            document.getElementById("edite").style.display = 'none'
+
+            const allidarray2 = ['name', 'email', 'password', 'age', 'dob', 'month', 'time', 'datetime', 'week', 'range', 'file'];
+            allidarray2.map((item) => {
+                return document.getElementById(item).value = ""
+            })
+            document.getElementById("checkbox").checked = false
+            document.getElementById("color").value = "#000000";
+        }
+
+        async function postinputdata() {
+
+            const formData = new FormData();
+
+            const allidarrays = ['name', 'email', 'password', 'age', 'dob', 'month', 'time', 'datetime', 'week', 'range', 'file', 'color'];
+            allidarrays.map((item) => {
+                formData.append(item, document.getElementById(item).value)
+            })
+
+
+            let radio = "female"
+            if (document.getElementById('male').checked) { radio = "male" }
+            else { radio = "female" }
+            formData.append('radio', radio)
+            formData.append('checkbox', document.getElementById('checkbox').checked)
+
+
+            if (file) {
+                const fileInput = document.getElementById('file');
+                const file = fileInput.files[0];
+                formData.append('file', file)
+            }
+
+
+            const response = await fetch("/create", {
+                method: "POST",
+                body: formData
+            });
+
+
+            const allidarray = ['name', 'email', 'password', 'age', 'dob', 'month', 'time', 'datetime', 'week', 'range', 'file'];
+            allidarray.map((item) => {
+                return document.getElementById(item).value = ""
+            })
+            document.getElementById("checkbox").checked = false
+            document.getElementById("color").value = "#000000";
+
+            fetchdata()
+        }
+
+        async function fetchdata() {
+            const response = await fetch("/fetch", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+            const result = await response.json()
+
+            let total = "";
+            result.data.map((item, index) => {
+                total += '<tr>'
+                total += '<th scope="row">' + ++index + '</th>'
+                total += '<td>' + item.name + '</td>'
+                total += '<td>' + item.email + '</td>'
+                total += '<td>' + item.age + '</td>'
+                total += '<td>' + item.dob + '</td>'
+                total += '<td>' + item.month + '</td>'
+                total += '<td>' + item.time + '</td>'
+                total += '<td>' + item.datetime + '</td>'
+                total += '<td>' + item.checkbox + '</td>'
+                total += '<td>' + item.radio + '</td>'
+                total += '<td>' + item.range + '</td>'
+                total += '<td>' + item.week + '</td>'
+                total += '<td><img src="../upload/' + item.file + '" width="60" height="60"></td>'
+                total += `<td><input type="button" class="btn btn-danger" onclick="deletedata('${item._id}')" value="delete"></td> <td><input type="button" class="btn btn-warning" data-bs-toggle="modal" onclick="editedata('${item._id}')" data-bs-target="#staticBackdrop" value="edite"></td>`
+                total += '</tr>'
+            })
+
+            document.getElementById('td').innerHTML = total
+
+
+        }
+
+        async function deletedata(itemid) {
+            const response = await fetch('/delete', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ id: itemid })
+            })
+
+            fetchdata()
+        }
+
+        async function editedata(itemid) {
+            const response = await fetch("/editeget", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ id: itemid })
+            });
+            const result = await response.json()
+
+            let entries = Object.entries(result.data[0])
+
+            let data = entries.map(([key, val] = entry) => {
+
+                // console.log(key)
+                switch (key) {
+                    case 'dob':
+                        let ts = new Date(val)
+                        let dob = ts.toISOString().split('T')[0]
+                        document.getElementById('dob').value = dob
+                        break;
+                    case 'month':
+                        const m = new Date(val)
+                        let mon = m.getUTCMonth() + 1
+                        let month = mon.toString().padStart(2, '0')
+                        let year = m.getUTCFullYear()
+                        document.getElementById('month').value = year + '-' + month
+                        break;
+                    case 'datetime':
+                        let date = val.toString().substr(0, 16)
+                        document.getElementById('datetime').value = date
+                        break;
+                    case 'checkbox':
+                        document.getElementById(key).checked = val
+                        break;
+                    case 'radio':
+                        document.getElementById(val).checked = true
+                        break;
+                    case 'file':
+                        break;
+                    case '__v':
+                        break;
+                    default:
+                        // console.log(key)
+                        document.getElementById(key).value = val
+                        break;
+                }
+
+                document.getElementById('post').style.display = 'none'
+                document.getElementById('edite').style.display = 'block'
+
+
+            });
+        }
+
+        async function editeinputdata() {
+
+            const formData = new FormData();
+
+            const allidarrays = ['name', 'email', 'password', 'age', 'dob', 'month', 'time', 'datetime', 'week', 'range', 'file', 'color', '_id'];
+            allidarrays.map((item) => {
+                formData.append(item, document.getElementById(item).value)
+            })
+
+            let radio = "female"
+            if (document.getElementById('male').checked) { radio = "male" }
+            else { radio = "female" }
+            formData.append('radio', radio)
+            formData.append('checkbox', document.getElementById('checkbox').checked)
+
+
+            if (file) {
+                const fileInput = document.getElementById('file');
+                const file = fileInput.files[0];
+                formData.append('file', file)
+            }
+
+            const response = await fetch("/update", {
+                method: "PUT",
+                body: formData
+            });
+
+
+            const allidarray = ['name', 'email', 'password', 'age', 'dob', 'month', 'time', 'datetime', 'week', 'range', 'file'];
+            allidarray.map((item) => {
+                return document.getElementById(item).value = ""
+            })
+            document.getElementById("checkbox").checked = false
+            document.getElementById("color").value = "#000000";
+
+            fetchdata()
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<div class="container-fluid table-responsive py-5">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Age</th>
+                <th scope="col">Dob</th>
+                <th scope="col">Month</th>
+                <th scope="col">Time</th>
+                <th scope="col">Datetime</th>
+                <th scope="col">Checkbox</th>
+                <th scope="col">Radio</th>
+                <th scope="col">Range</th>
+                <th scope="col">Weak</th>
+                <th scope="col">Files</th>
+                <th scope="col">Edite</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody id="td">
+            <% data.forEach((item,index)=>{ %>
+                <tr>
+                    <td scope="col"><%= index+1 %></td>
+                    <td scope="col"><%= item.name %></td>
+                    <td scope="col"><%= item.email %></td>
+                    <td scope="col"><%= item.age %></td>
+                    <td scope="col"><%= item.dob %></td>
+                    <td scope="col"><%= item.month %></td>
+                    <td scope="col"><%= item.time %></td>
+                    <td scope="col"><%= item.datetime %></td>
+                    <td scope="col"><%= item.checkbox %></td>
+                    <td scope="col"><%= item.radio %></td>
+                    <td scope="col"><%= item.range %></td>
+                    <td scope="col"><%= item.week %></td>
+                    <td scope="col"><img src="../upload/<%= item.file %>" width="60" height="60"></td>
+                    <td scope="col"><a type="button" class="btn btn-warning" href="/edite/<%= item._id %>" value="edite">Edite</a></td>
+                    <td scope="col"><a type="button" class="btn btn-danger" href="/delete/<%= item._id %>" value="delete">Delete</a></td>
+                </tr>
+              <% }) %>
+        </tbody>
+    </table>
+</div>

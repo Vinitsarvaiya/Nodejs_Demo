@@ -1,0 +1,120 @@
+<div class="d-grid gap-2 col-6 mx-auto mt-2">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Add Data
+    </button>
+</div>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Input form</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/create" class="form-horizontal" method="post" enctype="multipart/form-data">
+                    <div class="mb-3 row">
+                        <div class="col-12">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter full name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3 row">
+                        <div class="col-6">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+                        </div>
+                        <div class="col-6">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3 row">
+                        <div class="col-6">
+                            <label for="age" class="form-label">Age</label>
+                            <input type="number" class="form-control" id="age" name="age" placeholder="Enter age" required>
+                        </div>
+                        <div class="col-6">
+                            <label for="dob" class="form-label">Date of Birth</label>
+                            <input type="date" class="form-control" id="dob" name="dob" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3 row">
+                        <div class="col-6">
+                            <label for="month" class="form-label">Month</label>
+                            <input type="month" class="form-control" id="month" name="month" required>
+                        </div>
+                        <div class="col-6">
+                            <label for="time" class="form-label">Time</label>
+                            <input type="time" class="form-control" id="time" name="time" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3 row">
+                        <div class="col-6">
+                            <label for="datetime" class="form-label">Date & Time</label>
+                            <input type="datetime-local" class="form-control" id="datetime" name="datetime" required>
+                        </div>
+                        <div class="col-6">
+                            <label for="week" class="form-label">Week</label>
+                            <input type="week" class="form-control" id="week" name="week" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3 row">
+                        <div class="col-6">
+                            <label class="form-label">Gender</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="radio" id="male" value="male" checked>
+                                <label class="form-check-label" for="male">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="radio" id="female" value="female" >
+                                <label class="form-check-label" for="female">Female</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="color" class="form-label">Color</label>
+                            <input type="color" class="form-control" id="color" name="color" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3 row">
+                        <div class="col-12">
+                            <label for="range" class="form-label">Range</label>
+                            <input type="range" class="form-range" id="range" name="range" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3 row">
+                        <div class="col-12">
+                            <label for="file" class="form-label">File Upload</label>
+                            <input type="file" class="form-control" id="file" name="file" accept=".jpg,.jpeg" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3 row">
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="true" id="checkbox" name="checkbox">
+                                <label class="form-check-label" for="checkbox">I agree all conditions</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3 row">
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</div>
+</div>
